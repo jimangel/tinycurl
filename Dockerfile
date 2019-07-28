@@ -14,8 +14,8 @@ RUN apk add --no-cache openssl-dev wget build-base \
     && make curl_LDFLAGS=-all-static \
     && make install
 
-# use bash for simple entrypoint / scripting
-FROM bash:4.4.23
+# use busybox for a smaller, simple, entrypoint for scripting
+FROM busybox:1.31.0
 
 # copy stand-alone compiled curl to bash container
 COPY --from=build /usr/local/bin/curl /usr/local/bin/curl
