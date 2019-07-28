@@ -3,12 +3,12 @@ Lightweight. Simple. `bash` &amp; `curl` in a container for debugging or scripti
 
 ```
 # TO TEST (easy): 
-docker run -it quay.io/jimangel/tinycurl
+docker run -it --rm quay.io/jimangel/tinycurl
 
 # TO BUILD:
 # docker build --no-cache -t tinycurl:latest .
 
 # TO SCRIPT:
-# docker run -it quay.io/jimangel/tinycurl:latest /usr/local/bin/bash -c "cd var/; ls; echo 'hello'; curl -L google.com; echo 'done'"
+# docker run -it --rm quay.io/jimangel/tinycurl:latest /bin/sh -c "cd var/; ls; echo 'hello'; curl -L google.com; echo 'done'"
 
 ```
